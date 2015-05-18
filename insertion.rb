@@ -1,3 +1,5 @@
+## Sort2 is faster.
+
 def benchmark
   start = Time.now
   yield
