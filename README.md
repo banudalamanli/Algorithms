@@ -9,4 +9,7 @@
 - Very low overhead
 
 ###### Notes
-It is the algorithm of choice either when the data is nearly sorted (because it is adaptive) or when the problem size is small (because it has low overhead). For these reasons, and because it is also stable, insertion sort is often used as the recursive base case (when the problem size is small) for higher overhead divide-and-conquer sorting algorithms, such as merge sort or quick sort.
+It is the algorithm of choice either when:
+- the data is nearly sorted => because it is adaptive, or
+- the problem size is small => because it has low overhead.
+Because it is also stable, it is often used as the recursive base case (when the problem size is small) for higher overhead divide-and-conquer sorting algorithms - such as merge sort or quick sort.
