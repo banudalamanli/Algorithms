@@ -1,5 +1,5 @@
 # Sorting Algorithm Implementations in Ruby
-<em>*Resource: www.sorting-algorithms.com<em>
+<em>*Resource: www.sorting-algorithms.com</em>
 
 ### Insertion Sort
 - Stable
