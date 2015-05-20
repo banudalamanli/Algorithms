@@ -1,5 +1,4 @@
 # Sorting Algorithm Implementations in Ruby
-<em>*Resource: www.sorting-algorithms.com</em>
 
 ### Insertion Sort
 - Stable
@@ -16,6 +15,12 @@ Algorithm of choice either when:
 Because it is also stable, it's often used as the recursive base case (when the problem size is small) for higher overhead divide-and-conquer sorting algorithms - such as merge sort or quick sort.
 
 ### Selection Sort
+###### What does it do?
+<p>It basically iterates through the array looking for the smallest element, placing it in the smallest index (which at the start is 0), then repeats the same with the remainder of the array (where smallest index becomes +1 with every iteration).</p>
+
+<p>It starts iterating with the first element, compares it with the 2nd element, and swaps them if the 2nd element is smaller. Then it checks the 3rd element against the first element (formerly 2nd element) and swaps them if the 3 rd element is smaller, then the 4th element against first element...until all the elements in the array are compared. Then it moves on to the second element and checks it again the 3rd element, etc etc repeating the sweep.</p>
+
+It is:
 - Not stable
 - O(1) extra space
 - Θ(n2) comparisons
@@ -24,3 +29,6 @@ Because it is also stable, it's often used as the recursive base case (when the 
 
 ###### Notes
 In applications where the cost of swapping items is high, selection sort very well may be the algorithm of choice because it has the property of minimizing the number of swaps.
+
+
+<em>*Resource: www.sorting-algorithms.com</em>
