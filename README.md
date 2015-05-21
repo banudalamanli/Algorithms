@@ -43,7 +43,7 @@ In applications where the cost of swapping items is high, selection sort very we
 ###### How does it work?
 <p>It is about the position not the element.</p>
 <p>It starts from the end and moves backwards. </p>
-<p>Takes the last element (let's say nth element), compares it to the one below, swapping if it is smaller and leaving as is if not. Then checks the (n-1)th element and checks it with the one below it, swapping if it is smaller and again leaving as is if not - all the way to index 0. Since along the sweep the smallest element gets pushed all the way to the beginning, the second sweep starts the same way (from the last element) but ends when comparisons reach index 1 (not index 0). The next sweep starts at the end again, and stops at index 2, so on and so forth.</p>
+<p>Takes the last element (let's say nth element), compares it to the one below, swapping if it is smaller and leaving as is if not. Then checks the (n-1)th element and checks it with the one below it, swapping if it is smaller and again leaving as is if not - all the way to index 0. Every sweep finds the smallest element through these swaps and pushes it all the way to the front. The second sweep starts the same way (from the last element) but the front now is index 1 (not index 0 because that is already filled with the smallest element with the first sweep). The next sweep starts at the end again, and stops at index 2, so on and so forth.</p>
 
 ###### Properties
 - Stable
