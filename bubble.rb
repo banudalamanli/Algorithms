@@ -9,22 +9,14 @@
 # end
 
 def sort(collection)
-  p collection
-  p "********************************"
   collection.each_with_index do |el, i|
-    p "*********** i is: #{i} ************"
     swapped = false
     j = collection.length - 1
     while j > i
-      p "j is #{j}"
-      p "comparing #{collection[j-1]} and #{collection[j]}"
       if collection[j] < collection[j-1]
-        p "swapping #{collection[j]} with #{collection[j-1]}"
         collection[j], collection[j-1] = collection[j-1], collection[j]
         swapped = true
       end
-      p collection
-      p "subracting 1 from j"
       j -= 1
     end
     break unless swapped
@@ -42,7 +34,7 @@ end
 
 #
 # c = [1, 12, 7, 23, 54, 82, 124]
-# c = [54, 7, 12, 1, 82, 23, 124, 5]
+c = [54, 7, 12, 1, 82, 23, 124, 5]
 
 # RANDOM - NOT SORTED
 # c = Array.new(100) { rand(1..1000) }
