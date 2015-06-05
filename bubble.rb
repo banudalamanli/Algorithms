@@ -21,8 +21,10 @@ def sort(collection)
     end
     break unless swapped
   end
-  collection
+  p collection
 end
+
+#####################################################################
 
 def benchmark
   start = Time.now
@@ -30,18 +32,17 @@ def benchmark
   p (Time.now - start)
 end
 
-
-
-#
+# TESTS
 # c = [1, 12, 7, 23, 54, 82, 124]
 c = [54, 7, 12, 1, 82, 23, 124, 5]
 
 # RANDOM - NOT SORTED
 # c = Array.new(100) { rand(1..1000) }
-# c = Array.new(10000) { rand(1..100000) }
+# c = Array.new(5000) { rand(1..100000) }
 
 # NEARLY SORTED
 # c = Array.new(5000)
 # c.map!.with_index {|el, i| i}
 
 benchmark { sort(c) }
+
