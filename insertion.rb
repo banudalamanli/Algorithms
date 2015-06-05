@@ -65,6 +65,26 @@ def sort3(collection)
   collection
 end
 
+def sort4(collection)
+  # p "sort 4"
+  # p collection
+  i = 0
+  while i < collection.length - 1
+    k = i + 1
+    # p "*********** i is: #{i} ************"
+    while collection[k] < collection[k-1]
+      # p "k is: #{k}"
+      # p "swapping #{collection[k]} with #{collection[k-1]}"
+      collection[k], collection[k-1] = collection[k-1], collection[k]
+      # p collection
+      # p "subtracting 1 from k"
+      k -= 1
+      break if k == 0
+    end
+    i += 1
+  end
+  collection
+end
 
 def benchmark
   start = Time.now
@@ -85,6 +105,7 @@ a = Array.new(5000) { rand(1..1000000) }
 
 b = a.clone
 c = a.clone
+d = a.clone
 
 ### Performance of all of them are very close to each other. Need more detailed tests really.
 
@@ -93,8 +114,12 @@ c = a.clone
 # benchmark { sort3(c) }
 
 sort1_time = benchmark { sort1(a) }
+p "*" * 20
 sort2_time = benchmark { sort2(b) }
+p "*" * 20
 sort3_time = benchmark { sort3(c) }
+p "*" * 20
+sort4_time = benchmark { sort4(d) }
 
 # p (sort2_time - sort1_time)
 # p (sort3_time - sort1_time)
