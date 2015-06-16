@@ -6,7 +6,7 @@ $array = []
 
 def binary(n)
   if n < 1
-    p $array
+    p $array.join
   else
     $array[n-1] = 0
     binary(n-1)
@@ -15,7 +15,17 @@ def binary(n)
   end
 end
 
+__END__
 
+OUTPUT EXAMPLE:
 
+binary(3)
 
-
+"000"
+"100"
+"010"
+"110"
+"001"
+"101"
+"011"
+"111"
