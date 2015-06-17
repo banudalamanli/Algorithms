@@ -41,7 +41,7 @@ class SinglyLinkedList
 
   def insert(position, value) # Time complexity = O(n), Space complexity = O(1) for creating temp variable
     # Edge cases and errors
-    raise "The position argument needs to be an integer." unless position.is_a? Integer
+    raise "The position argument needs to be a positive number." unless position.is_a? Integer and position > 0
     list_size = self.length
     # Can't insert into linked list if position is beyond end point+1
     raise "There is no such position in given linked list" if position > (list_size + 1)
@@ -74,7 +74,11 @@ class SinglyLinkedList
   end
 
   def delete(position)
+    # Edge cases and errors
+    raise "The position argument needs to be a positive number." unless position.is_a? Integer and position > 0
     num_of_nodes = self.length
+    raise "There is no such position in given linked list" if position > (num_of_nodes + 1)
+
     # Deleting first element from list - Time complexity = O(1), Space complexity = O(1)
     if position == 1
       target  = @head
