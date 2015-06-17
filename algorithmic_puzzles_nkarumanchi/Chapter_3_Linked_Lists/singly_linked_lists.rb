@@ -64,8 +64,8 @@ class SinglyLinkedList
     end
 
     # EXTRA COMMENTS:
-    # # Without a find_nth_node method, implementation can be as follows (The code commented out code below would replace <previous_node = self.find_nth_node(position-1)>):
-    # # The pointer needs to hold the (n-1)th node as the "previous node" for insertions at position n.
+    # # Without a find_nth_node method, implementation can be as follows: (The code commented out code below would replace <previous_node = self.find_nth_node(position-1)>)
+    # # The pointer needs to hold the (n-1)th node as the "previous node" is needed for insertions at position n.
     # # The pointer previous_node is set to @head for insertion at position n = 2, meaning the below code should run 0 times if argument position == 2 - and +1 for each +1 in position (i.e. 1 time for position 3, 2 times for position 4, and so on). Therefore we need to traverse through the list position-2 times to find the right "previous" node.
 
     # previous_node = @head
@@ -98,7 +98,8 @@ class SinglyLinkedList
   end
 
   def delete_list
-    (self.length).times do
+    # List is traversed and as the head moves to the next pointer, the old head is freed up. The iteration is done length-1 times because the tail is freed up after the loop.
+    (self.length-1).times do
       old_head = @head
       @head = @head.next
       old_head = nil
@@ -129,41 +130,41 @@ p my_list.length == 1
 
 my_list.insert(my_list.length+1, 10)
 p my_list.length == 2
-puts my_list
+puts my_list # => 5, 10
 
 my_list.insert(my_list.length+1, 15)
-puts my_list
+puts my_list # => 5, 10, 15
 
 my_list.insert(my_list.length+1, 20)
-puts my_list
+puts my_list # => 5, 10, 15, 20
 
 my_list.insert(1, 0)
-puts my_list
+puts my_list # => 0, 5, 10, 15, 20
 
 p "CHECKING ADDITIONS:"
-puts my_list.insert(6, "at end")
-puts my_list
+puts my_list.insert(6, "at end")  # => at end
+puts my_list  # => 0, 5, 10, 15, 20, at end
 
-puts my_list.insert(1, "at beginning")
-puts my_list
+puts my_list.insert(1, "at beginning")  # => at beginning
+puts my_list  # => at beginning, 0, 5, 10, 15, 20, at end
 
-puts my_list.insert(4, "inserted!!")
-puts my_list
+puts my_list.insert(4, "inserted!!")  # => inserted!!
+puts my_list  # => at beginning, 0, 5, inserted!!, 10, 15, 20, at end
 
-# puts my_list.find_nth_node(4)
+# puts my_list.find_nth_node(4)  # => inserted!!
 
 p "DELETIONS:"
-puts my_list.delete(1)
-puts my_list
+puts my_list.delete(1)  # => at beginning
+puts my_list  # => 0, 5, inserted!!, 10, 15, 20, at end
 
-puts my_list.delete(my_list.length)
-puts my_list
+puts my_list.delete(my_list.length)  # => at end
+puts my_list  # => 0, 5, inserted!!, 10, 15, 20
 
-puts my_list.delete(3)
-puts my_list
+puts my_list.delete(3)  # => inserted!!
+puts my_list  # => 0, 5, 10, 15, 20
 
-puts "my_list.delete_list returns = < #{my_list.delete_list} >"
-puts my_list
+puts "my_list.delete_list returns = < #{my_list.delete_list} >"  # => my_list.delete_list returns = <  >
+puts my_list  # =>
 
 
 
