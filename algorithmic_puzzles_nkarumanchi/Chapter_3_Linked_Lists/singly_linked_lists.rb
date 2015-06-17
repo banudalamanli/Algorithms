@@ -77,21 +77,23 @@ class SinglyLinkedList
     num_of_nodes = self.length
     # Deleting first element from list - Time complexity = O(1), Space complexity = O(1)
     if position == 1
-      temp  = @head
+      target  = @head
       @head = @head.next
-      temp
+      target.next = nil
+      target
     # Deleting last element from list - Time complexity = O(n), Space complexity = O(1)
     elsif position == num_of_nodes
       node_before_tail      = self.find_nth_node(num_of_nodes - 1)
       node_before_tail.next = nil
-      last_node             = @tail
+      target                = @tail
       @tail                 = node_before_tail
-      last_node
+      target
     # Deleting intermediate element from list - Time complexity = O(n), Space complexity = O(1)
     else
       node_before_target      = self.find_nth_node(position - 1)
       target                  = node_before_target.next
       node_before_target.next = target.next
+      target.next = nil
       target
     end
   end
@@ -140,7 +142,7 @@ puts my_list # => 5, 10, 15, 20
 my_list.insert(1, 0)
 puts my_list # => 0, 5, 10, 15, 20
 
-p "CHECKING ADDITIONS:"
+p "MORE ADDITIONS:"
 puts my_list.insert(6, "at end")  # => at end
 puts my_list  # => 0, 5, 10, 15, 20, at end
 
@@ -159,7 +161,7 @@ puts my_list  # => 0, 5, inserted!!, 10, 15, 20, at end
 puts my_list.delete(my_list.length)  # => at end
 puts my_list  # => 0, 5, inserted!!, 10, 15, 20
 
-puts my_list.delete(3)  # => inserted!!
+puts my_list.delete(3) # => inserted!!
 puts my_list  # => 0, 5, 10, 15, 20
 
 puts "my_list.delete_list returns = < #{my_list.delete_list} >"  # => my_list.delete_list returns = <  >
