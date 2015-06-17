@@ -3,7 +3,7 @@ class Node
 
   def initialize(value = nil, next_node = nil)
     @value = value
-    @next = next_node
+    @next  = next_node
   end
 
   def next_node(value)
@@ -50,7 +50,7 @@ class SinglyLinkedList
     if position == 1
       old_head = @head
       @head    = Node.new(value, old_head)
-    # Adding to the end of the list - Time complexity = O(n), Space complexity = O(1)
+    # Adding to the end of the list - Time complexity = O(1), Space complexity = O(1)
     elsif position == (list_size + 1)
       @head.next = @tail if list_size == 1
       @tail      = @tail.next_node(value)
@@ -158,7 +158,7 @@ puts my_list
 puts my_list.delete(3)
 puts my_list
 
-puts "my_list.delete_list returns = < #{my_list.delete_list.inspect} >"
+puts "my_list.delete_list returns = < #{my_list.delete_list} >"
 
 
 
