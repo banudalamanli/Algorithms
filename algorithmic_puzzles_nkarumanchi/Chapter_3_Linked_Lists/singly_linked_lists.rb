@@ -16,7 +16,6 @@ class Node
 end
 
 class SinglyLinkedList
-  include GC
   attr_accessor :head, :tail
 
   def initialize(value = nil)
