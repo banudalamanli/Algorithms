@@ -16,6 +16,7 @@ class Node
 end
 
 class SinglyLinkedList
+  include GC
   attr_accessor :head, :tail
 
   def initialize(value = nil)
@@ -98,22 +99,25 @@ class SinglyLinkedList
 
   def delete_list
     (self.length).times do
-      temp = @head
-      @head.value, @head.next = nil, nil
-      temp = temp.next
+      old_head = @head
+      @head = @head.next
+      old_head = nil
     end
+    @tail = nil
     self
   end
 
-  private
+  # private
   def to_s
     current_node = @head
     printed_list = ''
-    while current_node != nil
+    # Iterating through the list length-1 times because the tail node will be added seperately at the end. Otherwise we would have to use .chop!.chop! to get rid of the extra ', '
+    (self.length-1).times do
       printed_list += current_node.to_s + ', '
       current_node = current_node.next
     end
-    "#{printed_list.chop!.chop!}"
+    printed_list += @tail.to_s
+    "#{printed_list}"
   end
 end
 
@@ -159,6 +163,7 @@ puts my_list.delete(3)
 puts my_list
 
 puts "my_list.delete_list returns = < #{my_list.delete_list} >"
+puts my_list
 
 
 
