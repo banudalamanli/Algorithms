@@ -40,5 +40,19 @@ function height( BinaryTree Node t ) {
 ```
 ##### Types of Binary Trees:
 - **Strict/Full Binary Tree:** Each node has exactly 0 or 2 children
-- **Perfect Binary Tree:** Each node has exactly 2 children AND all leaf nodes are at same level
-- **Complete Binary Tree:** All levels except the last is filled with nodes, and at the last level the nodes are placed from left to right, making the keys sequential and no numbers are missed.
+- **Perfect Binary Tree:** Each node has exactly 2 children AND all leaf nodes are at same level.
+- **Complete Binary Tree:** All nodes are placed from left to right, making the keys sequential and so no numbers are missed. In a complete BT all levels above the leaf level are filled. All perfect binary trees are complete trees, but not all complete BTs are perfect BTs.
+
+##### PROPERTIES
+**Perfect Binary Tree**
+- The number of leaf nodes is 2^h.
+- The number of nodes *n* is `2^(h+1) - 1`, because at h levels we need to add all nodes at each level: `[2^0 + 2^1 + 2^2 +...+ 2^h = 2^(h+1) - 1]`
+**Complete Binary Tree**
+- The number of nodes *n* is between `2^h` (minimum) and `2^(h+1) - 1` (maximum).
+- The number of NULL links (wasted pointers) in a complete BT of *n* nodes is `n + 1`.
+
+
+
+
+
+
