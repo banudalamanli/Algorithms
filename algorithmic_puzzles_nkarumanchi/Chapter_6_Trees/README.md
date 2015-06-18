@@ -5,17 +5,17 @@ number of nodes (similar to linked list).
 Order is not important in trees.
 
 #### CONCEPTS:
-<bold>Root        :</bold> Node with no parents
-<bold>Edge        :</bold> Link(s) from parent to child
-<bold>Leaf        :</bold> Node with no child
-<bold>Siblings    :</bold> Nodes of same parent
-<bold>Ancestors   :</bold> A node's ancestors are all the nodes that are on the direct path from itself to the root node.
-<bold>Descendants :</bold> A node's descendants are all the nodes that it is the ancestor of.
-<bold>Size of a node   :</bold> n of (Self + descendants)
-<bold>Depth of a node  :</bold> n of ancestors
-<bold>Height of a node :</bold> n of descendants
+**Root        :** Node with no parents
+**Edge        :** Link(s) from parent to child
+**Leaf        :** Node with no child
+**Siblings    :** Nodes of same parent
+**Ancestors   :** A node's ancestors are all the nodes that are on the direct path from itself to the root node.
+**Descendants :** A node's descendants are all the nodes that it is the ancestor of.
+**Size of a node   :** n of (Self + descendants)
+**Depth of a node  :** n of ancestors
+**Height of a node :** n of descendants
 
-<bold>Height of a tree :</bold> The maximum height among all the nodes of the tree (n of descendants of Root node)
+**Height of a tree :** The maximum height among all the nodes of the tree (n of descendants of Root node)
 
 
 ### BINARY TREES
