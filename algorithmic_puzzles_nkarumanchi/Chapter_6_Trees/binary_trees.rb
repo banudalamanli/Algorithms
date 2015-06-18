@@ -40,8 +40,8 @@ class BinaryTree
   # 1 2 4 5 3 6 7
   def preorder_traversal_recursive(start_node = @root) # Time complexity O(n), Space complexity O(n)
     if start_node != nil
-      preorder_traversal_recursive(start_node.left)
       p start_node.to_s
+      preorder_traversal_recursive(start_node.left)
       preorder_traversal_recursive(start_node.right)
     end
   end
@@ -60,6 +60,7 @@ class BinaryTree
     end
     result
   end
+
 
 
   def to_s
