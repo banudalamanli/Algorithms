@@ -17,8 +17,8 @@ Order is not important in trees.
 
 
 - **Height of a tree :** The maximum height among all the nodes of the tree. Or in other words, it is the number of edges on the longest downward path between the root and a leaf
-- **Depth of a tree :** The maximum depth among all the nodes of the tree
-*\*For a given tree the depth and height returns the same value.*
+- **Depth of a tree :** The maximum depth among all the nodes of the tree <br>
+*For a given tree the depth and height returns the same value.*
 
 
 ### BINARY TREES
