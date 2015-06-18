@@ -35,8 +35,8 @@ class BinaryTree
     @root = BinaryTreeNode.new(data)
   end
 
-  # PRE-ORDER TRAVERSAL
-  # In preorder traversal the nodes of the tree would be visited in the following order:
+  # PRE-ORDER TRAVERSAL: Order of visit => root-left-right
+  # The nodes of the tree would be visited in the following order:
   # 1 2 4 5 3 6 7
   def preorder_traversal_recursive(start_node = @root) # Time complexity O(n), Space complexity O(n)
     if start_node != nil
@@ -52,16 +52,61 @@ class BinaryTree
 
     stack = []
     stack << start_node
-    until stack.is_empty?
+    until stack.empty?
       temp_node = stack.pop
       result << temp_node.data
-      if temp_node.right != nil
-        stack << temp_node.right
-      elsif temp_node.left != nil
-        stack << temp_node.left
-      end
+      stack << temp_node.right if temp_node.right != nil
+      stack << temp_node.left if temp_node.left != nil
     end
     result
   end
 
+
+  def to_s
+    p "*" * 30
+    printed_list = ''
+    printed_list += preorder_traversal_recursive(@root).to_s
+    # OR printed_list += preorder_traversal_iterative(@root).to_s
+    "#{printed_list}"
+  end
+
 end
+
+
+#####################################
+# TESTS
+
+my_binary_tree = BinaryTree.new(1)
+print "root is: "
+puts my_binary_tree.root
+puts my_binary_tree
+
+my_binary_tree.root.left  = BinaryTreeNode.new(2)
+puts my_binary_tree
+
+my_binary_tree.root.right = BinaryTreeNode.new(3)
+puts my_binary_tree
+
+my_binary_tree.root.left.left  = BinaryTreeNode.new(4)
+puts my_binary_tree
+
+my_binary_tree.root.left.right = BinaryTreeNode.new(5)
+puts my_binary_tree
+
+my_binary_tree.root.right.left  = BinaryTreeNode.new(6)
+puts my_binary_tree
+
+my_binary_tree.root.right.right = BinaryTreeNode.new(7)
+puts my_binary_tree
+
+
+
+
+
+
+
+
+
+
+
+
