@@ -16,6 +16,6 @@
 
 ###### Auxilary:
 - Delete List
-- Count
+- Length
 - Find nth node
 
