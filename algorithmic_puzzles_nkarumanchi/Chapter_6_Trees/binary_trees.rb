@@ -15,7 +15,16 @@ class BinaryTreeNode
 end
 
 ####################################
-# EXAMPLE TREE
+=begin
+----- EXAMPLE TREE -----
+
+            1
+          /   \
+         2     3
+        / \   / \
+       4   5 6   7
+
+=end
 ####################################
 
 
@@ -26,10 +35,13 @@ class BinaryTree
     @root = BinaryTreeNode.new(data)
   end
 
+  # PRE-ORDER TRAVERSAL
+  # In preorder traversal the nodes of the tree would be visited in the following order:
+  # 1 2 4 5 3 6 7
   def preorder_traversal_recursive(start_node = @root) # Time complexity O(n), Space complexity O(n)
     if start_node != nil
       preorder_traversal_recursive(start_node.left)
-      puts start_node.to_s
+      p start_node.to_s
       preorder_traversal_recursive(start_node.right)
     end
   end
