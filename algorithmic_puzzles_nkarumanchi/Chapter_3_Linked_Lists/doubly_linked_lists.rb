@@ -146,7 +146,7 @@ puts my_list # => 5
 p "==================================================="
 
 
-p "****************** HEAD NODE: head - prev - next"
+# p "****************** HEAD NODE: head - prev - next"
 # puts my_list.head
 # puts my_list.head.inspect
 # p "--- prev"
