@@ -7,14 +7,6 @@ class Node
     @next  = next_node
   end
 
-  def next_node(value)
-    @next = Node.new(value)
-  end
-
-  def prev_node(node)
-    @prev = node
-  end
-
   def to_s
     "#{@value.to_s}"
   end
@@ -29,7 +21,7 @@ class DoublyLinkedList
     @tail = @head
   end
 
-  def length # Time complexity = O(n), Space complexity = O(1)
+  def length
     length = 0
     current_node = @head
     while current_node != nil
@@ -62,10 +54,10 @@ class DoublyLinkedList
       @tail.next = new_tail
       @tail      = new_tail
     else
-      previous_node = self.find_nth_node(position-1)
-      insertion = Node.new(value, previous_node, previous_node.next)
+      previous_node           = self.find_nth_node(position-1)
+      insertion               = Node.new(value, previous_node, previous_node.next)
       previous_node.next.prev = insertion
-      previous_node.next = insertion
+      previous_node.next      = insertion
     end
   end
 
@@ -75,33 +67,32 @@ class DoublyLinkedList
     raise "There is no such position in given linked list" if position > (num_of_nodes + 1)
 
     if position == 1
-      target = @head
-      @head = @head.next
-      @head.prev = nil
+      target      = @head
+      @head       = @head.next
+      @head.prev  = nil
       target.next = nil
       target
     elsif position == num_of_nodes
       previous_node = @tail.prev
       previous_node.next = nil
-      @tail.prev = nil
-      target = @tail
-      @tail = previous_node
+      @tail.prev    = nil
+      target        = @tail
+      @tail         = previous_node
       target
     else
-      previous_node = self.find_nth_node(position-1)
-      target = previous_node.next
+      previous_node      = self.find_nth_node(position-1)
+      target             = previous_node.next
       previous_node.next = target.next
-      target.next.prev = previous_node
+      target.next.prev   = previous_node
       target.next, target.prev = nil
       target
     end
   end
 
   def delete_list
-    # List is traversed and as the head moves to the next pointer, the old head is freed up. The iteration is done length-1 times because the tail is freed up after the loop.
     (self.length-1).times do
       old_head = @head
-      @head = @head.next
+      @head    = @head.next
       old_head = nil
     end
     @tail = nil
@@ -110,7 +101,7 @@ class DoublyLinkedList
 
   def to_s
     current_node = @head
-    printed_list = ''
+    printed_list = ''å
     (self.length-1).times do
       printed_list += current_node.to_s + ', '
       current_node = current_node.next

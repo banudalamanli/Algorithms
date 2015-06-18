@@ -6,10 +6,6 @@ class Node
     @next  = next_node
   end
 
-  def next_node(value)
-    @next = Node.new(value)
-  end
-
   def to_s
     "#{@value.to_s}"
   end
@@ -53,7 +49,9 @@ class SinglyLinkedList
     # Adding to the end of the list - Time complexity = O(1), Space complexity = O(1)
     elsif position == (list_size + 1)
       @head.next = @tail if list_size == 1
-      @tail      = @tail.next_node(value)
+      new_tail   = Node.new(value)
+      @tail.next = new_tail
+      @tail      = new_tail
     # Adding to the middle of the list - Time complexity = O(n), Space complexity = O(1)
     else
       insertion          = Node.new(value)
