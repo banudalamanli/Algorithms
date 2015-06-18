@@ -5,7 +5,7 @@ Order is not important in trees. It is a way of representing hierarchical data. 
 
 ##### CONCEPTS:
 - **Root        :** Node with no parents
-- **Edge        :** Link(s) from parent to child
+- **Edge        :** Link from parent to child
 - **Leaf        :** Node with no child
 - **Siblings    :** Nodes of same parent
 - **Ancestors   :** A node's ancestors are all the nodes that are on the direct path from itself to the root node.
@@ -38,7 +38,7 @@ function height( BinaryTree Node t ) {
   return h
 }
 ```
-##### TYPES OF BNARY TREES:
+##### TYPES OF BINARY TREES:
 - **Strict/Full Binary Tree:** Each node has exactly 0 or 2 children
 - **Perfect Binary Tree:** Each node has exactly 2 children AND all leaf nodes are at same level.
 - **Complete Binary Tree:** All nodes are placed from left to right, making the keys sequential and so no numbers are missed. In a complete BT all levels above the leaf level are filled. All perfect binary trees are complete trees, but not all complete BTs are perfect BTs.
@@ -52,7 +52,7 @@ function height( BinaryTree Node t ) {
 - The number of nodes *n* is between `2^h` (minimum) and `2^(h+1) - 1` (maximum).
 - The number of NULL links (wasted pointers) in a complete BT of *n* nodes is `n + 1`.
 
-##### APPLICATION OF BINARY TREES
+##### APPLICATIONS OF BINARY TREES
 - Expression trees are used in compilers
 - Huffman coding trees are used in data compression algorithms
 - Binary Search Trees (BST), which support search, insertion, and deletion in O(log n) on average.
