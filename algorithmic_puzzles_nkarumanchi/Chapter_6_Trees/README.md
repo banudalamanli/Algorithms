@@ -46,7 +46,7 @@ function height( BinaryTree Node t ) {
 ##### PROPERTIES
 **Perfect Binary Tree**
 - The number of leaf nodes is 2^h.
-- The number of nodes *n* is `2^(h+1) - 1`, because at h levels we need to add all nodes at each level: `[2^0 + 2^1 + 2^2 +...+ 2^h = 2^(h+1) - 1]`
+- The number of nodes *n* is `2^(h+1) - 1`, because at h levels we need to add all nodes at each level: `[2^0 + 2^1 + 2^2 +...+ 2^h = 2^(h+1) - 1]`<br>
 **Complete Binary Tree**
 - The number of nodes *n* is between `2^h` (minimum) and `2^(h+1) - 1` (maximum).
 - The number of NULL links (wasted pointers) in a complete BT of *n* nodes is `n + 1`.
