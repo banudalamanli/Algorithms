@@ -53,21 +53,56 @@ class BinaryTree
     stack = []
     stack << start_node
     until stack.empty?
-      temp_node = stack.pop
-      result << temp_node.data
-      stack << temp_node.right if temp_node.right != nil
-      stack << temp_node.left if temp_node.left != nil
+      current_node = stack.pop
+      result << current_node.data
+      stack << current_node.right if current_node.right != nil
+      stack << current_node.left if current_node.left != nil
     end
     result
   end
 
+  # IN-ORDER TRAVERSAL: Order of visit => left-root-right
+  # The nodes of the tree would be visited in the following order:
+  # 4 2 5 1 6 3 7
+  def inorder_traversal_recursive(start_node = @root) # Time complexity O(n), Space complexity O(n)
+    if start_node != nil
+      inorder_traversal_recursive(start_node.left)
+      p start_node.to_s
+      inorder_traversal_recursive(start_node.right)
+    end
+  end
 
+  def inorder_traversal_iterative(start_node = @root) # Time complexity O(n), Space complexity O(n)
+    result = []
+    stack  = []
+
+    current_node = start_node
+    done = false
+
+    until done
+      if current_node != nil
+        stack << current_node
+        current_node = current_node.left
+      else
+        if stack.empty?
+          done = true
+        else
+          current_node = stack.pop
+          result << current_node.data
+          current_node = current_node.right
+        end
+      end
+    end
+    result
+  end
 
   def to_s
     p "*" * 30
     printed_list = ''
     printed_list += preorder_traversal_recursive(@root).to_s
-    # OR printed_list += preorder_traversal_iterative(@root).to_s
+    # printed_list += preorder_traversal_iterative(@root).to_s
+    # printed_list += inorder_traversal_recursive(@root).to_s
+    # printed_list += inorder_traversal_iterative(@root).to_s
     "#{printed_list}"
   end
 
