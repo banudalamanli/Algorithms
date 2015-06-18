@@ -1,9 +1,9 @@
 ## TREES
 
 Trees are abstract data structures with linked nodes where each node points to a number of nodes (similar to linked list).
-Order is not important in trees.
+Order is not important in trees. It is a way of representing hierarchical data. It makes data easily searchable (binary search tree, tree traversal, etc)
 
-#### CONCEPTS:
+##### CONCEPTS:
 - **Root        :** Node with no parents
 - **Edge        :** Link(s) from parent to child
 - **Leaf        :** Node with no child
@@ -11,7 +11,7 @@ Order is not important in trees.
 - **Ancestors   :** A node's ancestors are all the nodes that are on the direct path from itself to the root node.
 - **Descendants :** A node's descendants are all the nodes that it is the ancestor of.
 - **Size of a node   :** n of (Self + descendants)
-- **Level of a node  :** n of (Self + ascestors)
+- **Level of a node  :** n of (Self + anscestors)
 - **Height of a node :** n of descendants
 - **Depth of a node  :** n of ancestors
 
@@ -24,7 +24,7 @@ Order is not important in trees.
 ### BINARY TREES
 A tree is called a binary tree where each node has either zero child, one child, or two children.
 
-#### Recursive Height Function in Pseudocode
+##### Recursive Height Function in Pseudocode
 
 ```JavaScript
 function height( BinaryTree Node t ) {
