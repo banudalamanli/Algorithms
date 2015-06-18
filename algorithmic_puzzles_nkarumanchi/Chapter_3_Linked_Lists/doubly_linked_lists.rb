@@ -97,6 +97,17 @@ class DoublyLinkedList
     end
   end
 
+  def delete_list
+    # List is traversed and as the head moves to the next pointer, the old head is freed up. The iteration is done length-1 times because the tail is freed up after the loop.
+    (self.length-1).times do
+      old_head = @head
+      @head = @head.next
+      old_head = nil
+    end
+    @tail = nil
+    self
+  end
+
   def to_s
     current_node = @head
     printed_list = ''
@@ -145,12 +156,12 @@ p "==================================================="
 
 
 p "****************** HEAD NODE: head - prev - next"
-puts my_list.head
-puts my_list.head.inspect
-p "--- prev"
-puts my_list.head.prev.inspect
-p "--- next"
-puts my_list.head.next.inspect
+# puts my_list.head
+# puts my_list.head.inspect
+# p "--- prev"
+# puts my_list.head.prev.inspect
+# p "--- next"
+# puts my_list.head.next.inspect
 
 
 # p "****************** INSERTED NODE: head - prev - next"
@@ -163,13 +174,20 @@ puts my_list.head.next.inspect
 # puts middle_node.next.inspect
 
 
-p "****************** TAIL NODE: head - prev - next"
-puts my_list.tail
-puts my_list.tail.inspect
-p "--- prev"
-puts my_list.tail.prev.inspect
-p "--- next"
-puts my_list.tail.next.inspect
+# p "****************** TAIL NODE: head - prev - next"
+# puts my_list.tail
+# puts my_list.tail.inspect
+# p "--- prev"
+# puts my_list.tail.prev.inspect
+# p "--- next"
+# puts my_list.tail.next.inspect
+
+
+p "============= DELETING THE WHOLE LIST ================="
+puts "my_list.delete_list returns: #{my_list.delete_list}"  # => my_list.delete_list returns = <  >
+puts my_list  # =>
+
+
 
 
 
