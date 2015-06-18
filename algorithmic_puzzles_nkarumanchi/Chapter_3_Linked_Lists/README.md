@@ -1,4 +1,6 @@
-#### PROPERTIES OF LINKED LISTS:
+## LINKED LISTS
+
+#### Properties Of Linked Lists:
 
 - Successive elements are connected by pointers
 - Last element points to nil/null
@@ -6,7 +8,7 @@
 - Can be made just as long as required (until system memory is exhausted)
 - It does not waste memory space (but takes some extra memory space for pointers)
 
-#### OPERATIONS ON LINKED LISTS:
+#### Operations On Linked Lists:
 ###### BASIC:
 - Traverse
 - Insert
