@@ -26,11 +26,13 @@ A tree is called a binary tree where each node has either zero child, one child,
 
 #### Recursive Height Function in Pseudocode
 
-function height( BinaryTree Node t ) {<br>
-  return -1 if t is a null/empty tree<br>
-<br>
-  hl = height( left subtree of t )<br>
-  hr = height( right subtree of t )<br>
-  h = 1 + maximum of hl and hr<br>
-  return h<br>
-}<br>
+```JavaScript
+function height( BinaryTree Node t ) {
+  return -1 if t is a null/empty tree
+
+  hl = height( left subtree of t )
+  hr = height( right subtree of t )
+  h = 1 + maximum of hl and hr
+  return h
+}
+```
