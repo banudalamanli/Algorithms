@@ -75,11 +75,25 @@ class DoublyLinkedList
     raise "There is no such position in given linked list" if position > (num_of_nodes + 1)
 
     if position == 1
-
+      target = @head
+      @head = @head.next
+      @head.prev = nil
+      target.next = nil
+      target
     elsif position == num_of_nodes
-
+      previous_node = @tail.prev
+      previous_node.next = nil
+      @tail.prev = nil
+      target = @tail
+      @tail = previous_node
+      target
     else
-
+      previous_node = self.find_nth_node(position-1)
+      target = previous_node.next
+      previous_node.next = target.next
+      target.next.prev = previous_node
+      target.next, target.prev = nil
+      target
     end
   end
 
@@ -108,6 +122,28 @@ puts my_list # => beginning, 5
 my_list.insert(3, "at end")
 puts my_list # => beginning, 5, at end
 
+p "***** INSERT IN MID"
+my_list.insert(3, "inserted!!!!!")
+puts my_list # => beginning, 5, inserted!!!!!, at end
+
+
+p "========================= DELETION ================="
+
+p "Deleting START"
+my_list.delete(1)
+puts my_list # => 5, inserted!!!!!, at end
+
+p "Deleting MIDDLE"
+my_list.delete(2)
+puts my_list # => 5, at end
+
+p "Deleting END"
+my_list.delete(my_list.length)
+puts my_list # => 5
+
+p "==================================================="
+
+
 p "****************** HEAD NODE: head - prev - next"
 puts my_list.head
 puts my_list.head.inspect
@@ -116,18 +152,15 @@ puts my_list.head.prev.inspect
 p "--- next"
 puts my_list.head.next.inspect
 
-p "************************************** INSERTED IN MID"
-my_list.insert(3, "inserted!!!!!")
-puts my_list
 
-p "****************** INSERTED NODE: head - prev - next"
-middle_node = my_list.find_nth_node(3)
-puts middle_node
-puts middle_node.inspect
-p "--- prev"
-puts middle_node.prev.inspect
-p "--- next"
-puts middle_node.next.inspect
+# p "****************** INSERTED NODE: head - prev - next"
+# middle_node = my_list.find_nth_node(3)
+# puts middle_node
+# puts middle_node.inspect
+# p "--- prev"
+# puts middle_node.prev.inspect
+# p "--- next"
+# puts middle_node.next.inspect
 
 
 p "****************** TAIL NODE: head - prev - next"
@@ -137,6 +170,7 @@ p "--- prev"
 puts my_list.tail.prev.inspect
 p "--- next"
 puts my_list.tail.next.inspect
+
 
 
 
