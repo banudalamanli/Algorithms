@@ -5,17 +5,17 @@ number of nodes (similar to linked list).
 Order is not important in trees.
 
 #### CONCEPTS:
-**Root        :** Node with no parents
-**Edge        :** Link(s) from parent to child
-**Leaf        :** Node with no child
-**Siblings    :** Nodes of same parent
-**Ancestors   :** A node's ancestors are all the nodes that are on the direct path from itself to the root node.
-**Descendants :** A node's descendants are all the nodes that it is the ancestor of.
-**Size of a node   :** n of (Self + descendants)
-**Depth of a node  :** n of ancestors
-**Height of a node :** n of descendants
+- **Root        :** Node with no parents
+- **Edge        :** Link(s) from parent to child
+- **Leaf        :** Node with no child
+- **Siblings    :** Nodes of same parent
+- **Ancestors   :** A node's ancestors are all the nodes that are on the direct path from itself to the root node.
+- **Descendants :** A node's descendants are all the nodes that it is the ancestor of.
+- **Size of a node   :** n of (Self + descendants)
+- **Depth of a node  :** n of ancestors
+- **Height of a node :** n of descendants
 
-**Height of a tree :** The maximum height among all the nodes of the tree (n of descendants of Root node)
+- **Height of a tree :** The maximum height among all the nodes of the tree (n of descendants of Root node)
 
 
 ### BINARY TREES
@@ -23,11 +23,11 @@ A tree is called a binary tree where each node has either zero child, one child,
 
 #### Recursive Height Function in Pseudocode
 
-function height( BinaryTree Node t ) {
-  return -1 if t is a null/empty tree
-
-  hl = height( left subtree of t )
-  hr = height( right subtree of t )
-  h = 1 + maximum of hl and hr
-  return h
-}
+function height( BinaryTree Node t ) {<br>
+  return -1 if t is a null/empty tree<br>
+<br>
+  hl = height( left subtree of t )<br>
+  hr = height( right subtree of t )<br>
+  h = 1 + maximum of hl and hr<br>
+  return h<br>
+}<br>
