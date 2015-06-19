@@ -16,7 +16,7 @@ def max_value_recursive(root)
 end
 
 # PROBLEM 2: Find the maximum value in a binary tree without recursion.
-# Solution: Using level order traversal and keeping track of max value.
+# Solution: Using level order traversal and keeping track of max value while deleting.
 def max_value_iterative(root)
   raise "Please pass the root of the binary tree as an argument." if root.is_a? BinaryTree
   raise "Binary tree has no max value" if root == nil
@@ -37,7 +37,15 @@ def max_value_iterative(root)
   max_value
 end
 
+# PROBLEM 3: Find element in binary tree with recursion
+# Solution:
+def find_node(root, data)
+  raise "Please pass the root of the binary tree as an argument." if root.is_a? BinaryTree
 
+  return false if root == nil
+  return true if root.data == data
+  return find_node(root.left, data) || find_node(root.right, data)
+end
 
 
 #####################################################
@@ -80,4 +88,6 @@ my_binary_tree.root.right.right.right = BinaryTreeNode.new(15)
 # DRIVER TESTS
 p max_value_recursive(my_binary_tree.root) == 15
 p max_value_iterative(my_binary_tree.root) == 15
+p find_node(my_binary_tree.root, 11) == true
+p find_node(my_binary_tree.root, 24) == false
 
