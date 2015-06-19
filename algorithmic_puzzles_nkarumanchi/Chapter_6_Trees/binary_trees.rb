@@ -202,7 +202,7 @@ my_binary_tree.root.right.left  = BinaryTreeNode.new(6)
 # puts my_binary_tree
 
 my_binary_tree.root.right.right = BinaryTreeNode.new(7)
-puts my_binary_tree
+# puts my_binary_tree
 
 
 
