@@ -145,18 +145,18 @@ class BinaryTree
     queue = Queue.new
     queue << start_node
     queue << nil
-    level_result = []
+    current_results = []
 
     until queue.empty?
       temp_node = queue.pop
       if temp_node != nil
-        level_result << temp_node.data
+        current_results << temp_node.data
         queue << temp_node.left unless temp_node.left == nil
         queue << temp_node.right unless temp_node.right == nil
         queue << nil
       elsif temp_node == nil
-        result << level_result
-        level_result = []
+        result << current_results
+        current_results = []
       end
     end
     result.flatten
@@ -165,14 +165,14 @@ class BinaryTree
   def to_s
     printed_list = ''
     array_of_data = level_traversal
-    array_of_data.each { |data| printed_list += data.to_s + '  ' }
+    array_of_data.each { |data| printed_list += data.to_s + ', ' }
     # printed_list += preorder_traversal_recursive.to_s
     # printed_list += preorder_traversal_iterative.to_s
     # printed_list += inorder_traversal_recursive.to_s
     # printed_list += inorder_traversal_iterative.to_s
     # printed_list += postorder_traversal_recursive.to_s
     # printed_list += postorder_traversal_iterative.to_s
-    "#{printed_list}"
+    "#{printed_list.chop!.chop!}"
   end
 
 end
