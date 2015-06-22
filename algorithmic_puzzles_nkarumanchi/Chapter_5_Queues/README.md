@@ -2,8 +2,7 @@
 
 An ordered list in which insertion is done at the *rear* and deletion are done at the *front*. The first elemented added is the first one to be deleted. It is also called FIFO (First In First Out) or LILO (Last In Last Our) list.
 
-##### CONCEPTS:
-* **Same as Stack** *
+##### CONCEPTS: *Same as Stack*
 - **Underflow :** Trying to delete an element from an empty queue.
 - **Overflow  :** Trying to add an element to a full queue.
 
