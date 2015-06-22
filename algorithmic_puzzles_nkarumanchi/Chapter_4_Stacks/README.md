@@ -1,6 +1,6 @@
 ## STACKS
 
-An ordered list with a fixed size in which insertion and deletion are done at the end. The last elemented added is the first one to be deleted. It is also called FILO (First In Last Out) or LIFO (Last In First Our) list.
+An ordered list in which insertion and deletion are done at the end. The last elemented added is the first one to be deleted. It is also called FILO (First In Last Out) or LIFO (Last In First Our) list.
 
 ##### CONCEPTS:
 - **Underflow :** Trying to delete an element from an empty stack.
@@ -15,7 +15,7 @@ An ordered list with a fixed size in which insertion and deletion are done at th
 
 ### IMPLEMENTATIONS
 For all implementations and **n** push operations Space Complexity is <code>O(n)</code> and Time Complexity is <code>O(1)</code>
-- **Simple Array:** Elements are added from left to right and a variable is used to keep track of the index of the last element
+- **Simple Array:** Elements are added from left to right and a variable is used to keep track of the index of the last element. A limitation is that the size is fixed at the beginning and cannot be changed.
 - **Dynamic Array:** For the dynamic array implementation to have the complexity mentioned above, the approach to add elements to a full stack has to be "Repeated Doubling" as opposed to "Incremental Strategy". Repeated doubling is when the stack is full to create a new array of twice the size and copy items over. Incremental strategy on the other hand creates a new array of bigger size, copies all the elements of the old array to it and adds the new element at the end, and repeats the whole process again when adding a new element (this results in a Time Complexity of <code>O(n^2)</code>).
 - **Linked List:** Elements are added and deleted to the beginning of the list (head node).
 
