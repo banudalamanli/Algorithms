@@ -25,6 +25,7 @@ For all implementations and **n** push operations Space Complexity is <code>O(n)
 - Expensive doubling operation every once in a while (see dynamic array implementation above).
 - Starting from an empty stack *n* number of operations take time proportional to *n*.
 <br>
+
 **Linked List Implementation:**<br>
 - Grows and shrinks nicely.
 - Every opertion takes constant time.
