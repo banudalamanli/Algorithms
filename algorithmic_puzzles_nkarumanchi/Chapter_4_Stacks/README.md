@@ -20,7 +20,7 @@ For all implementations and **n** push operations Space Complexity is <code>O(n)
 - **Linked List:** Elements are added and deleted to the beginning of the list (head node).
 
 ##### COMPARISON OF IMPLEMENTATIONS:
-**Array Implementation:**
+**Array Implementation:**<br>
 - Operations take constant time.
 - Expensive doubling operation every once in a while (see dynamic array implementation above).
 - Starting from an empty stack *n* number of operations take time proportional to *n*.
