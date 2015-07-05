@@ -24,8 +24,8 @@ Is an abstract data structure that is very similar to queues. However, in Priori
 
 ### HEAPS AND BINARY HEAPS
 A heap is a tree with following special properties:<br>
-- The value of a node must be '>=' (or '<=') to the value(s) of its children. (*heap property*)
-- All leaves should be at 'h' or 'h-1' levels. In other words, it should be a *complete binary tree*
+- The value of a node must be `>=` (or `<=`) to the value(s) of its children. (*heap property*)
+- All leaves should be at `h` or `h-1` levels. In other words, it should be a *complete binary tree*
 * *Being a complete binary tree, there won't be any wasted space*
 
 ###### Types of Heaps?
