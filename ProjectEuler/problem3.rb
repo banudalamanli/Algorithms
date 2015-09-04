@@ -1,4 +1,4 @@
-######### PROBLEM 1:
+######### PROBLEM 3:
 ### LARGEST PRIME FACTOR ###
 # The prime factors of 13195 are 5, 7, 13, and 29.
 # What is the largest prime factor of the number 600851475143?
@@ -8,64 +8,23 @@ def is_prime?(num)
   return true if num == 1 || num == 2
   return false if num % 2 == 0
   int = 3
-  while int < Math::sqrt(num)
+  while int <= Math::sqrt(num)
     return false if num % int == 0
     int += 2
   end
   true
 end
 
-def find_factors(num)
-  factors = []
-  int = 2
-  while int <= num/3
-    if num % int == 0
-      factors << int
-      factors << num / int
-    end
-    int += 2
-  end
-  p factors
-end
-
 def find_largest_prime_factor(num)
-  all_factors = find_factors(num)
-  all_factors.count.times do
-    factor = all_factors.delete_at(-1)
-    return factor if is_prime?(factor)
-  end
-end
-
-def find_largest_prime_factor2(num)
-  max = current_factor = 2
-
-  until num < max
-    until num % current_factor  == 0
-      current_factor  += 1
+  factor = 2
+  while factor <= num/3
+    if num % factor == 0
+      largest_factor = num / factor
+      return p largest_prime = largest_factor if is_prime?(largest_factor)
     end
-
-    max = current_factor if current_factor > max
-    num /= current_factor
-    current_factor = 2
+    factor += 1
   end
-  p max
-end
-
-
-def find_largest_prime_factor3(num)
-  max_factor = 1
-  current_factor = 2
-
-  until num == 1
-    if num % current_factor == 0
-      max_factor = current_factor
-      while num % current_factor == 0
-        num /= current_factor
-      end
-    end
-    current_factor += 1
-  end
-  p max_factor
+  p num if is_prime?(num)
 end
 
 ###################################################################
