@@ -35,26 +35,10 @@ end
 # p is_prime?(15) == false
 # p is_prime?(5) == true
 
-# p find_factors(18) == [1, 2, 3, 6, 9]
-# p find_factors(42) == [1, 2, 3, 6, 7, 14, 21]
-
-
 # p find_largest_prime_factor(8) == 2
 # p find_largest_prime_factor(15) == 5
 # p find_largest_prime_factor(13195) == 29
 # p find_largest_prime_factor(600851475143) == 6857
-
-p find_largest_prime_factor2(8) == 2
-p find_largest_prime_factor2(15) == 5
-p find_largest_prime_factor2(340) == 17
-p find_largest_prime_factor2(13195) == 29
-p find_largest_prime_factor2(600851475143) == 6857
-p "*" * 30
-p find_largest_prime_factor3(8) == 2
-p find_largest_prime_factor3(15) == 5
-p find_largest_prime_factor3(340) == 17
-p find_largest_prime_factor3(13195) == 29
-p find_largest_prime_factor3(600851475143) == 6857
 
 
 
