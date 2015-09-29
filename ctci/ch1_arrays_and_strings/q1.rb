@@ -12,14 +12,16 @@ def unique?(str)
   true
 end
 
-p unique?("hello") == false
-p unique?("banu")  == true
+p unique?("hello")  == false
+p unique?("banana") == false
+p unique?("banu")   == true
 
 
 # 1.1 What if you can not use additional data structures?
 def unique_no_data_structures(str)
-  !str.match(/(\w)\1/)
+  !str.match(/^.*(.).*\1.*$/)
 end
 
-p unique?("hello") == false
-p unique?("banu")  == true
+p unique_no_data_structures("hello")  == false
+p unique_no_data_structures("banana") == false
+p unique_no_data_structures("banu")   == true
