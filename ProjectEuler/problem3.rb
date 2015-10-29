@@ -16,17 +16,23 @@ def is_prime?(num)
 end
 
 def find_largest_prime_factor(num)
+  return num if is_prime?(num)
   factor = 2
   while factor <= num/3
     if num % factor == 0
       largest_factor = num / factor
-      return p largest_prime = largest_factor if is_prime?(largest_factor)
+      return largest_prime = largest_factor if is_prime?(largest_factor)
     end
     factor += 1
   end
-  p num if is_prime?(num)
 end
 
+tests = gets.chomp.to_i
+
+tests.times do
+  number = gets.chomp.to_i
+  puts find_largest_prime_factor(number)
+end
 ###################################################################
 
 # DRIVER TESTS:
